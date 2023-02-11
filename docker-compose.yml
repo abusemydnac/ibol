@@ -43,6 +43,7 @@ services:
   # | | | (_| | | | | |_| | | | (_) | |_| \__ \  __/
   # |_|_|\__, |_| |_|\__|_| |_|\___/ \__,_|___/\___|
   #      |___/
+  # https://eth-clients.github.io/checkpoint-sync-endpoints/#goerli
 
   lighthouse:
     image: sigp/lighthouse:${LIGHTHOUSE_VERSION:-v3.4.0}
