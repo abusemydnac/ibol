@@ -17,12 +17,15 @@ echo " container......."
 # Clone this repo
 git clone https://github.com/ObolNetwork/charon-distributed-validator-node.git
 
+# chmod
+sudo chmod -R 777 charon-distributed-validator-node
+
 # Change directory
 cd charon-distributed-validator-node
 
 # fix
 mkdir .charon
-sudo chmod -R 777 .charon
+sudo chmod -R 666 .charon
 
 #doccker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
