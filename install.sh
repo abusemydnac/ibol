@@ -21,6 +21,7 @@ git clone https://github.com/ObolNetwork/charon-distributed-validator-node.git
 cd charon-distributed-validator-node
 
 # fix
+mkdir .charon
 sudo chmod -R 777 .charon
 
 # Create your charon ENR private key, this will create a charon-enr-private-key file in the .charon directory
