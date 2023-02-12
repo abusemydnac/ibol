@@ -28,8 +28,8 @@ docker-compose logs -f
 </code></pre>
 
 #节点部署 geth&lighthouse
-<pre><code>
+<code>
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth-lighthouse.yml
 docker-compose up -d 
 docker-compose logs -f
-</code></pre>
+</code>
