@@ -19,7 +19,6 @@ wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/m
 wget https://raw.githubusercontent.com/abusemydnac/ibol/main/install.sh
 bash install.sh
 </code></pre>
-
 #最小化 charon启动(obol)
 <pre><code>
 cd /root
