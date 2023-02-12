@@ -25,8 +25,8 @@ sudo chmod -R 777 charon-distributed-validator-node
 cd charon-distributed-validator-node
 
 # fix
-mkdir cd /root/.charon
-sudo chmod -R 777 cd /root/.charon
+mkdir cd /root/charon-distributed-validator-node/.charon
+sudo chmod -R 777 cd /root/charon-distributed-validator-node/.charon
 
 
 #doccker-compose
