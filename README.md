@@ -19,7 +19,7 @@ wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/m
 wget https://raw.githubusercontent.com/abusemydnac/ibol/main/install.sh
 bash install.sh
 </code></pre>
-#最小化 charon启动(obol) Creator&Operator
+# 最小化 charon启动(obol) Creator&Operator
 <pre><code>
 cd /root
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-mini.yml
@@ -27,9 +27,13 @@ docker-compose up -d
 docker-compose logs -f
 </code></pre>
 
-#节点部署 geth&lighthouse
+# 节点部署 geth&lighthouse
 <pre><code>
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth-lighthouse.yml
 docker-compose up -d 
 docker-compose logs -f
+</code></pre>
+# 备份
+<pre><code>
+php /root/phpcmd/charon_bak.php
 </code></pre>
