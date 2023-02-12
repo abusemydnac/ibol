@@ -13,22 +13,24 @@ https://obol-dvt.notion.site/Obol-Bia-Testnet-Handbook-7003ac195a2d422fa3f0ee31c
 
 如果填表36小时后没bia角色可以私信管理 Leo Jourdain#3084 或者The Architect | Obol Moderator#0001
 
-# ibol
-
-
+# ibol DKG完成
+<pre><code>
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose.yml
-
-
 wget https://raw.githubusercontent.com/abusemydnac/ibol/main/install.sh
-
 bash install.sh
+</code></pre>
 
-
-
-
+#最小化 charon启动(obol)
+<pre><code>
+cd /root
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-mini.yml
-
 docker-compose up -d 
-
-
 docker-compose logs -f
+</code></pre>
+
+#节点部署 geth&lighthouse
+<pre><code>
+wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth-lighthouse.yml
+docker-compose up -d 
+docker-compose logs -f
+</code></pre>
