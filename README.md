@@ -15,3 +15,13 @@ wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/m
 wget https://raw.githubusercontent.com/abusemydnac/ibol/main/install.sh
 
 bash install.sh
+
+
+
+
+wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-mini.yml
+
+docker-compose up -d 
+
+
+docker-compose logs -f
