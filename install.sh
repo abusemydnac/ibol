@@ -25,7 +25,7 @@ cd charon-distributed-validator-node
 
 # fix
 mkdir .charon
-sudo chmod -R 666 .charon
+sudo chmod -R 777 .charon
 
 #doccker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
