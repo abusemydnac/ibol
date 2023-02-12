@@ -12,6 +12,7 @@ echo \
 apt-get update -y
 apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
+cd /root/
 
 echo " container......."
 # Clone this repo
@@ -24,8 +25,9 @@ sudo chmod -R 777 charon-distributed-validator-node
 cd charon-distributed-validator-node
 
 # fix
-mkdir .charon
-sudo chmod -R 777 .charon
+mkdir cd /root/.charon
+sudo chmod -R 777 cd /root/.charon
+
 
 #doccker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
