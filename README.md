@@ -6,6 +6,10 @@ DKG 完成后，请填写 Google 表格 (https://forms.gle/3HKmLchnsvoGEjK56) �
 
 BIA https://docs.google.com/forms/d/e/1FAIpQLScjlJBziZPaOd2u4sHYkaQA5Ve8pJpNhRjWZF3oIndIx6NLcQ/viewform
 
+
+# 奖励相关
+https://obol-dvt.notion.site/Obol-Bia-Testnet-Handbook-7003ac195a2d422fa3f0ee31cc15e4d6
+
 # ibol
 
 
