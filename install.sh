@@ -34,6 +34,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v2.16.0/docker
 
 sudo chmod +x /usr/local/bin/docker-compose
 
-
+cd /root/charon-distributed-validator-node/
 # Create your charon ENR private key, this will create a charon-enr-private-key file in the .charon directory
 docker run --rm -v "$(pwd):/opt/charon" obolnetwork/charon:v0.13.0 create enr
