@@ -30,8 +30,9 @@ docker-compose logs -f
 # 节点部署 geth&lighthouse
 <pre><code>
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth-lighthouse.yml
+docker-compose down
 docker-compose up -d 
-docker-compose logs -f
+docker-compose logs teku charon -f
 </code></pre>
 # 备份
 <pre><code>
