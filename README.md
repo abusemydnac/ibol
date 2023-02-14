@@ -21,7 +21,7 @@ bash install.sh
 </code></pre>
 # 最小化 charon启动(obol) Creator&Operator
 <pre><code>
-cd /root
+cd /root/charon-distributed-validator-node
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-mini.yml
 docker-compose up -d 
 docker-compose logs -f
