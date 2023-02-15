@@ -51,4 +51,23 @@ tail -f  create.log
 </code></pre>
 
 
+# AUTOHOSTINGIF2
+<pre><code>
+
+wget -O /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php https://raw.githubusercontent.com/abusemydnac/ibol/main/SELF_NOSTOP_weekTaskAutoRun.php
+
+npm config set registry https://registry.npm.taobao.org
+apt install npm -y
+
+npm install pm2 -g
+ pm2 start /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php -i 16
+pm2 scale app 2
+ pm2 scale  /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  22
+pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  +2
+
+
+</code></pre>
+
+
+
 
