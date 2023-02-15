@@ -42,7 +42,7 @@ php /root/phpcmd/charon_bak.php
 # 备份
 <pre><code>
 wget https://raw.githubusercontent.com/abusemydnac/ibol/main/ifonline.sh
-bash install.sh
+bash ifonline.sh
 </code></pre>
 
 
