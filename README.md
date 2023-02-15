@@ -44,6 +44,8 @@ php /root/phpcmd/charon_bak.php
 wget https://raw.githubusercontent.com/abusemydnac/ibol/main/ifonline.sh
 bash ifonline.sh
 php /root/phpcmd/MultiIFnodes.php 1 100
+
+
 </code></pre>
 
 
