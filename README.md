@@ -42,8 +42,9 @@ php /root/phpcmd/charon_bak.php
 # 备份
 <pre><code>
 wget https://raw.githubusercontent.com/abusemydnac/ibol/main/ifonline.sh
-bash ifonline.sh
-php /root/phpcmd/MultiIFnodes.php 1 100
+bash ifonline.sh && nohup php /root/phpcmd/MultiIFnodes.php 1 100  > create.log 2>&1 &
+tail -f  create.log
+
 
 
 </code></pre>
