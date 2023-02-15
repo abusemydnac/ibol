@@ -39,3 +39,11 @@ docker-compose logs geth lighthouse -f
 <pre><code>
 php /root/phpcmd/charon_bak.php
 </code></pre>
+# 备份
+<pre><code>
+wget https://raw.githubusercontent.com/abusemydnac/ibol/main/ifonline.sh
+bash install.sh
+</code></pre>
+
+
+
