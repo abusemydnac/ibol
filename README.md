@@ -60,11 +60,9 @@ npm config set registry https://registry.npm.taobao.org
 apt install npm -y
 
 npm install pm2 -g
- pm2 start /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php -i 16
-pm2 scale app 2
- pm2 scale  /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  22
-pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  +2
-
+pm2 start /root/phpcmd/createWalletAndFaucet.php 1 100
+pm2 start /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php -i 10
+pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  10
 
 </code></pre>
 
