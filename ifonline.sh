@@ -12,6 +12,7 @@ echo \
 
 apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 apt-get install php -y
+docker pull ghcr.io/iron-fish/ironfish:latest
 cd /root/
 mkdir /root/phpcmd
 cd /root/phpcmd
