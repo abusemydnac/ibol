@@ -39,7 +39,7 @@ docker-compose logs geth lighthouse -f
 <pre><code>
 php /root/phpcmd/charon_bak.php
 </code></pre>
-# 备份
+# AUTOHOSTINGIF
 <pre><code>
 wget https://raw.githubusercontent.com/abusemydnac/ibol/main/ifonline.sh
 bash ifonline.sh && nohup php /root/phpcmd/MultiIFnodes.php 1 100  > create.log 2>&1 &
