@@ -20,14 +20,18 @@ for ($i = $minNum; $i <= $maxNum; $i++) {
         echo "有点异常...\r\n";
         echo $grattifi;
         sleep(60);
+         $i--;
+        continue;
     }
     if (empty($grattifi)) {
         echo "系统待执行任务为空....等待60秒...\r\n";
         sleep(60);
-        return '';
+         $i--;
+        continue;
     }
     $isFinishHosting = getHostingPoints($grattifi);
     if ($isFinishHosting) {
+        sleep(3);
         $i--;
         continue;
     }
