@@ -43,7 +43,7 @@ php /root/phpcmd/charon_bak.php
 <pre><code>
 wget https://raw.githubusercontent.com/abusemydnac/ibol/main/ifonline.sh
 bash ifonline.sh
-php /root/phpcmd/MultiIFnodes.php 100
+php /root/phpcmd/MultiIFnodes.php 1 100
 </code></pre>
 
 
