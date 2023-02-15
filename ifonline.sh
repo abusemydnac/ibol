@@ -9,8 +9,12 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-apt-get update -y
-apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
+apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+apt-get install php -y
 cd /root/
+mkdir /root/phpcmd
+cd /root/phpcmd
+wget -O MultiIFnodes.php https://github.com/abusemydnac/ibol/blob/main/MultiIFnodes.php
+wget -O config.json https://github.com/abusemydnac/ibol/blob/main/config.json
 
