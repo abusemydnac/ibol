@@ -11,6 +11,7 @@ echo \
 apt-get update -y
 apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 apt-get install php -y
+apt-get install docker -y
 apt install php7.4-cli -y
 docker pull ghcr.io/iron-fish/ironfish:latest
 cd /root/
