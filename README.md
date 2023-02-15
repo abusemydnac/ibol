@@ -55,6 +55,7 @@ tail -f  create.log
 <pre><code>
 
 wget -O /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php https://raw.githubusercontent.com/abusemydnac/ibol/main/SELF_NOSTOP_weekTaskAutoRun.php
+wget -O /root/phpcmd/createWalletAndFaucet.php https://raw.githubusercontent.com/abusemydnac/ibol/main/createWalletAndFaucet.php
 
 npm config set registry https://registry.npm.taobao.org
 apt install npm -y
