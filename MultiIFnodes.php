@@ -54,6 +54,7 @@ function changeNodeGraffiti($grattifi,  $i)
         $isFinishHosting = getHostingPoints($grattifi);
         if (!$isFinishHosting and $grattifi) {
             echo $grattifi . " 未完成,继续努力 \r\n";
+            $data = shell_exec("docker run -itd --name node$i  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start");
             $data = shell_exec("docker exec  node$i bash -c 'ironfish config:set blockGraffiti $grattifi'");
             echo $data;
             $data = shell_exec("docker exec  node$i bash -c 'ironfish status'");
