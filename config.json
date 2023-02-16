@@ -5,7 +5,7 @@
     "enableListenP2P": false,
     "enableLogFile": false,
     "enableMetrics": false,
-    "maxPeers":1,
+    "maxPeers":10,
     "nodeWorkers":0
 
 }
