@@ -91,6 +91,8 @@ function getHostingPoints($grattifi)
     $data = json_decode($file_contents);
     //var_dump($data);
     echo "\r\n" . $grattifi . "|points:" . $data->points . "|websiteid:" . $websiteid . " |HostingPoints:" . $data->metrics->node_uptime->points .  " \r\n";
+    if ($data->metrics->node_uptime->points >= 10)
+        file_get_contents('http://43.154.249.28:8000/index.php?r=ironfishacc/getwebsiteid&hostpoints='.$data->metrics->node_uptime->points.'&graffiti=' . $grattifi);
     if ($data->metrics->node_uptime->points >= 140) {
         return true;
     } else
