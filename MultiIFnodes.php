@@ -66,12 +66,16 @@ function changeNodeGraffiti($grattifi,  $i)
     $data = shell_exec("docker run -itd --name node$i --restart=always  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start");
     echo $data;
     $data = shell_exec("cp -rf /root/phpcmd/config.json /root/.node$i/config.json");
-    $data = shell_exec("docker restart node$i");
+
     echo "\r\n docker exec  node$i bash -c 'ironfish config:set blockGraffiti $grattifi' \r\n";
     sleep(1);
     $data = shell_exec("docker exec  node$i bash -c 'ironfish config:set blockGraffiti $grattifi'");
     echo $data;
     sleep(1);
+    $data = shell_exec("docker restart node$i");
+    
+    sleep(1);
+    
     $data = shell_exec("docker exec  node$i bash -c 'ironfish status'");
     echo $data;
     file_put_contents($graffiti_file, $grattifi);
