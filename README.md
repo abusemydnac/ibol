@@ -78,6 +78,8 @@ bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/one
 
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/check.sh )
 
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/reinstall.sh )
+
 https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6
 
 https://juejin.cn/post/7135739035158315022
