@@ -6,5 +6,4 @@ mkdir /root/phpcmd
 cd /root/phpcmd
 wget -O MultiIFnodes.php https://raw.githubusercontent.com/abusemydnac/ibol/main/MultiIFnodes.php
 wget -O config.json https://raw.githubusercontent.com/abusemydnac/ibol/main/config.json
-nohup php /root/phpcmd/MultiIFnodes.php 1 40  > create.log 2>&1 &
-tail -f  create.log
+nohup php /root/phpcmd/MultiIFnodes.php 1 40  > /root/autorun.log 2>&1 &
