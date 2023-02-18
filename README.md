@@ -52,7 +52,7 @@ tail -f  create.log
 
 
 # AUTOHOSTINGIF2
-<pre><code>
+
 
 wget -O /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php https://raw.githubusercontent.com/abusemydnac/ibol/main/SELF_NOSTOP_weekTaskAutoRun.php
 wget -O /root/phpcmd/createWalletAndFaucet.php https://raw.githubusercontent.com/abusemydnac/ibol/main/createWalletAndFaucet.php
@@ -68,5 +68,10 @@ pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  10
 </code></pre>
 
 
+# 其他
+<pre><code>
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/oneinstall.sh )
 
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/oneupdate.sh )
 
+</code></pre>
