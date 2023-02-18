@@ -76,6 +76,7 @@ bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/one
 
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/oneupdate.sh )
 
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/check.sh )
 
 https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6
 
