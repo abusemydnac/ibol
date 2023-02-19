@@ -77,7 +77,7 @@ function changeNodeGraffiti($grattifi,  $i)
     $data = shell_exec("chmod -R 777 /root/.node$i");
     echo $data;
     $graffiti_file = "/root/.node$i/graffiti";
-
+    $data = shell_exec("cp -rf /root/phpcmd/config.json /root/.node$i/config.json");
 
     $data = shell_exec("docker run -itd --name node$i --restart=always  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start");
     echo $data;
