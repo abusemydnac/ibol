@@ -2,7 +2,7 @@
 
 const PRE_CMD = 'docker exec node ironfish';
 //awk '($1 == "MemTotal:"){print $2/1048576}' /proc/meminfo
-$threadPerG = 4;
+$threadPerG = 5;
 $MEM = shell_exec('awk \'($1 == "MemTotal:"){print $2/1048576}\' /proc/meminfo');
 $MEM = trim($MEM);
 $MEM_MAX_POC = intval($threadPerG * $MEM);
@@ -33,6 +33,7 @@ for ($i = $minNum; $i <= $maxNum; $i++) {
         $isFinishHosting = getHostingPoints($grattifi);
         if (!$isFinishHosting and $grattifi) {
             echo $grattifi . " 未完成,继续努力 \r\n";
+            $data = shell_exec("cp -rf /root/phpcmd/config.json /root/.node$i/config.json");
             $data = shell_exec("docker run -itd --restart=always --name node$i  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start");
             $data = shell_exec("docker exec  node$i bash -c 'ironfish config:set blockGraffiti $grattifi'");
             echo $data;
@@ -80,7 +81,7 @@ function changeNodeGraffiti($grattifi,  $i)
 
     $data = shell_exec("docker run -itd --name node$i --restart=always  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start");
     echo $data;
-    $data = shell_exec("cp -rf /root/phpcmd/config.json /root/.node$i/config.json");
+   
 
     echo "\r\n docker exec  node$i bash -c 'ironfish config:set blockGraffiti $grattifi' \r\n";
     sleep(1);
