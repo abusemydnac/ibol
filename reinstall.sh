@@ -1,6 +1,6 @@
 #重新开启线程
 echo " Docker......."
-
+echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 apt-get update -y
 apt-get install ca-certificates curl gnupg lsb-release -y
 mkdir -p /etc/apt/keyrings
