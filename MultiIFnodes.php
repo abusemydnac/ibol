@@ -1,16 +1,25 @@
 <?php
 
 const PRE_CMD = 'docker exec node ironfish';
+//awk '($1 == "MemTotal:"){print $2/1048576}' /proc/meminfo
+$threadPerG = 4;
+$MEM = shell_exec('awk \'($1 == "MemTotal:"){print $2/1048576}\' /proc/meminfo');
+$MEM = trim($MEM);
+$MEM_MAX_POC = intval($threadPerG * $MEM);
+echo "\r\n" . "当前设备内存: $MEM G |可以开启线程数量:$MEM_MAX_POC \r\n";
 if (count($argv) >= 2) {
     $minNum = $argv[1];
-    echo "\r\n" . 'set minNum:' . $minNum . "\r\n";
 } else
     $minNum = 1;
 if (count($argv) >= 3) {
     $maxNum = $argv[2];
-    echo "\r\n" . 'set maxNum:' . $maxNum . "\r\n";
-} else
-    $maxNum = 1;
+}
+if ($maxNum >= $MEM_MAX_POC) {
+    $maxNum = $MEM_MAX_POC;
+}
+echo "\r\n" . 'set minNum:' . $minNum . "\r\n";
+echo "\r\n" . 'set maxNum:' . $maxNum . "\r\n";
+
 $weeklink_grattifi = 'http://43.154.249.28:8000/index.php?r=ironfishacc/getgraffiti&task=newminer';
 $newstart = 0;
 
@@ -32,7 +41,6 @@ for ($i = $minNum; $i <= $maxNum; $i++) {
             sleep(3);
             continue;
         }
-        
     }
     $grattifi = file_get_contents($weeklink_grattifi);
     $grattifi = trim($grattifi);
