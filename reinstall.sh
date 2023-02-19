@@ -5,8 +5,8 @@ docker pull ghcr.io/iron-fish/ironfish:latest
 cd /root/
 mkdir /root/phpcmd
 cd /root/phpcmd
-wget -O MultiIFnodes.php https://raw.githubusercontent.com/abusemydnac/ibol/main/MultiIFnodes.php
-wget -O config.json https://raw.githubusercontent.com/abusemydnac/ibol/main/config.json
+wget -O /root/phpcmd/MultiIFnodes.php https://raw.githubusercontent.com/abusemydnac/ibol/main/MultiIFnodes.php
+wget -O /root/phpcmd/config.json https://raw.githubusercontent.com/abusemydnac/ibol/main/config.json
 chmod -R 777 /root/phpcmd/config.json
 chmod -R 777 /root/.node*
 #nohup php /root/phpcmd/MultiIFnodes.php 1 40  > /root/autorun.log 2>&1 &
