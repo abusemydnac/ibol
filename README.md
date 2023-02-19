@@ -58,11 +58,15 @@ wget -O /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php https://raw.githubuserconte
 wget -O /root/phpcmd/createWalletAndFaucet.php https://raw.githubusercontent.com/abusemydnac/ibol/main/createWalletAndFaucet.php
 
 npm config set registry https://registry.npm.taobao.org
+
 apt install npm -y
 
 npm install pm2 -g
+
 php /root/phpcmd/createWalletAndFaucet.php 1 100
+
 pm2 start /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php -i 10
+
 pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  10
 
 </code></pre>
