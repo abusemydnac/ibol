@@ -1,5 +1,5 @@
 #重新开启线程
-#rm -rf /root/.node*/*
+rm -rf /root/.node*/*
 docker rm $(docker ps -a | awk '{ print $1}' | tail -n +2) --force
 docker pull ghcr.io/iron-fish/ironfish:latest
 cd /root/
