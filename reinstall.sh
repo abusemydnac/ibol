@@ -1,8 +1,7 @@
 #重新开启线程
-docker pull ghcr.io/iron-fish/ironfish:latest
 #rm -rf /root/.node*/*
 docker rm $(docker ps -a | awk '{ print $1}' | tail -n +2) --force
-
+docker pull ghcr.io/iron-fish/ironfish:latest
 cd /root/
 mkdir /root/phpcmd
 cd /root/phpcmd
