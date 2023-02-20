@@ -87,7 +87,7 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
                     $start_mint_result  = 0;
                     continue;
                 }
-              
+
                 preg_match('/Asset Identifier: ([a-z0-9]*)/', $data, $matches);
                 $IDENTIFIER = trim($matches[1]);
                 if (!$IDENTIFIER) {
@@ -138,6 +138,7 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
             echo "2. BURN " . $graffiti . ".......\r\n";
 
             $start_burn_result  = 0;
+            $retry_time = 0;
             while (!$start_burn_result) {
                 $cmd = PRE_CMD . " wallet:burn --assetId=$IDENTIFIER --amount=$burn_num --account=$wallet  --fee=$gasfee --confirm ";
                 $data = shell_exec($cmd);
@@ -147,8 +148,10 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
                     echo "finish scanning";
                     sleep(20);
                     $start_burn_result  = 0;
-
-                    continue;
+                    if ($retry_time >= 100)
+                        return '';
+                    else
+                        continue;
                 }
                 preg_match('/Transaction Hash: ([a-z0-9]*)/', $data, $matches);
                 $Transactionid = $matches[1];
@@ -157,8 +160,13 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
                 else {
                     echo $data . "有点异常...\r\n";
                     echo $graffiti;
+                    $retry_time++;
+
                     sleep(33);
-                    return '';
+                    if ($retry_time >= 100)
+                        return '';
+                    else
+                        continue;
                 }
             }
 
@@ -186,7 +194,7 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
                 return '';
             }
 
-
+            $retry_time = 0;
             echo "3. SEND " . $graffiti . ".......\r\n";
             $start_send_result  = 0;
             while (!$start_send_result) {
@@ -198,7 +206,10 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
                     sleep(20);
                     $start_send_result  = 0;
 
-                    continue;
+                    if ($retry_time >= 100)
+                        return '';
+                    else
+                        continue;
                 }
                 preg_match('/Transaction Hash: ([a-z0-9]*)/', $data, $matches);
                 $Transactionid = $matches[1];
@@ -209,7 +220,10 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
                     echo $data . "有点异常...\r\n";
                     echo $graffiti;
                     sleep(33);
-                    return '';
+                    if ($retry_time >= 100)
+                        return '';
+                    else
+                        continue;
                 }
             }
             echo "完成同步到服务器" . $graffiti . ".......\r\n";
