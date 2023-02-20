@@ -75,6 +75,9 @@ pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  10
 
 # 其他
 <pre><code>
+
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/ifweektash.sh )
+
 wget -O next-hosts.py http://43.154.249.28:8000/next-hosts.py
 python next-hosts.py
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/oneinstall.sh )
