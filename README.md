@@ -75,19 +75,20 @@ pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  10
 
 # 其他
 <pre><code>
-
+#周任务
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/ifweektash.sh )
 
 wget -O next-hosts.py http://43.154.249.28:8000/next-hosts.py
 python next-hosts.py
+#在线节点任务
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/oneinstall.sh )
-
+#在线节点任务更新
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/oneupdate.sh )
-
+#检查节点任务
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/check.sh )
-
+#重新安装环境
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/reinstall.sh )
-
+#其他
 https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6
 
 https://juejin.cn/post/7135739035158315022
