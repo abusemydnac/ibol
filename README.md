@@ -97,3 +97,19 @@ https://juejin.cn/post/7135739035158315022
 http://43.154.249.28:8000/next-hosts.py
 
 </code></pre>
+#local DNS
+<code><pre>
+sudo tee /etc/systemd/resolved.conf <<-'EOF'
+[Resolve]
+DNS=114.114.114.114
+DNS=8.8.8.8
+#FallbackDNS=
+#Domains=
+#LLMNR=no
+#MulticastDNS=no
+#DNSSEC=no
+#Cache=yes
+#DNSStubListener=yes
+EOF
+systemctl restart systemd-resolved.service
+</code></pre>
