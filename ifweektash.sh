@@ -7,6 +7,8 @@ npm config set registry https://registry.npm.taobao.org
 apt install npm -y
 npm install pm2 -g
 php /root/phpcmd/changeNodeGraffiti.php
-php /root/phpcmd/createWalletAndFaucet.php 1 40
+docker exec  node bash -c 'ironfish config:set enableTelemetry true'
+docker exec  node bash -c 'ironfish config:set maxPeers 10'
+php /root/phpcmd/createWalletAndFaucet.php 1 35
 pm2 start /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php -i 2
-pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php 2
+pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php 4
