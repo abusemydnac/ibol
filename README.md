@@ -82,6 +82,7 @@ wget -O next-hosts.py http://43.154.249.28:8000/next-hosts.py
 python next-hosts.py
 #在线节点任务
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/oneinstall.sh )
+tail -f /root/create.log
 #在线节点任务更新
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/oneupdate.sh )
 #检查节点任务
