@@ -34,7 +34,7 @@ for ($i = $minNum; $i <= $maxNum; $i++) {
         if (!$isFinishHosting and $grattifi) {
             echo $grattifi . " 未完成,继续努力 \r\n";
             $data = shell_exec("cp -rf /root/phpcmd/config.json /root/.node$i/config.json");
-            $data = shell_exec("docker run -itd --restart=always --name node$i  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start");
+            $data = shell_exec("docker run -itd --restart=always --name node$i  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start --upgrade");
             $data = shell_exec("docker exec  node$i bash -c 'ironfish config:set blockGraffiti $grattifi'");
             echo $data;
             $data = shell_exec("docker exec  node$i bash -c 'ironfish status'");
@@ -82,7 +82,7 @@ function changeNodeGraffiti($grattifi,  $i)
     $graffiti_file = "/root/.node$i/graffiti";
     $data = shell_exec("cp -rf /root/phpcmd/config.json /root/.node$i/config.json");
 
-    $data = shell_exec("docker run -itd --name node$i --restart=always  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start");
+    $data = shell_exec("docker run -itd --name node$i --restart=always  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start --upgrade");
     echo $data;
 
 
