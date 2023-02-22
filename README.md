@@ -77,8 +77,7 @@ pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  10
 # 其他
 <pre><code>
 #内网代理
-export http_proxy=192.168.0.116:10803
-export https_proxy=192.168.0.116:10803
+
 
 #周任务
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/ifweektash.sh )
@@ -86,6 +85,8 @@ bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/ifw
 wget -O next-hosts.py http://43.154.249.28:8000/next-hosts.py
 python next-hosts.py
 #在线节点任务
+export http_proxy=192.168.0.116:10803
+export https_proxy=192.168.0.116:10803
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/oneinstall.sh )
 tail -f /root/create.log
 #在线节点任务更新
