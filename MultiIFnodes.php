@@ -62,6 +62,9 @@ for ($i = $minNum; $i <= $maxNum; $i++) {
     if ($isFinishHosting) {
         echo $grattifi . " 已完成! \r\n";
         sleep(3);
+        $data = shell_exec("rm $graffiti_file");
+        $i--;
+        continue;
     }
     //创建新任务
     changeNodeGraffiti($grattifi,  $i);
@@ -81,7 +84,7 @@ function changeNodeGraffiti($grattifi,  $i)
 
     $data = shell_exec("docker run -itd --name node$i --restart=always  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start");
     echo $data;
-   
+
 
     echo "\r\n docker exec  node$i bash -c 'ironfish config:set blockGraffiti $grattifi' \r\n";
     sleep(1);
@@ -106,9 +109,9 @@ function getHostingPoints($grattifi)
     $file_contents = file_get_contents($link);
     $data = json_decode($file_contents);
     //var_dump($data);
-    echo "\r\n" . $grattifi . "|points:" . $data->points . "|websiteid:" . $websiteid . " |HostingPoints:" . $data->metrics->node_uptime->points .  " \r\n";
+    echo "\r\n" . $grattifi . "|points:" . $data->points . "|websiteid:" . $websiteid . " |HostingPoints:" . $data->metrics->node_uptime->points . " |Rank:" . $data->pools->main->rank .  " \r\n";
     if ($data->metrics->node_uptime->points >= 10)
-        file_get_contents('http://43.154.249.28:8000/index.php?r=ironfishacc/getwebsiteid&hostpoints=' . $data->metrics->node_uptime->points . '&graffiti=' . $grattifi);
+        file_get_contents('http://43.154.249.28:8000/index.php?r=ironfishacc/getwebsiteid&hostpoints=' . $data->metrics->node_uptime->points . '&graffiti=' . $grattifi . '&points=' . $data->points . '&rank=' . $data->pools->main->rank);
     if ($data->metrics->node_uptime->points >= 140) {
         return true;
     } else
