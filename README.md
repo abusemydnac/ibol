@@ -53,7 +53,8 @@ tail -f  create.log
 
 # AUTOHOSTINGIF2
 
-
+<pre><code>
+mkdir /root/phpcmd/
 wget -O /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php https://raw.githubusercontent.com/abusemydnac/ibol/main/SELF_NOSTOP_weekTaskAutoRun.php
 
 wget -O /root/phpcmd/createWalletAndFaucet.php https://raw.githubusercontent.com/abusemydnac/ibol/main/createWalletAndFaucet.php
