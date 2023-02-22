@@ -76,6 +76,10 @@ pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  10
 
 # 其他
 <pre><code>
+#内网代理
+export http_proxy=192.168.0.116:10803
+export https_proxy=192.168.0.116:10803
+
 #周任务
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/ifweektash.sh )
 
