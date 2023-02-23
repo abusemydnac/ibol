@@ -37,7 +37,7 @@ for ($i = $minNum; $i <= $maxNum; $i++) {
             $data = shell_exec("docker rm node$i -f");
             sleep(1);
             $data = shell_exec("cp -rf /root/phpcmd/config.json /root/.node$i/config.json");
-            $data = shell_exec("docker run -itd --restart=always --name node$i  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start --upgrade");
+            $data = shell_exec("docker run -itd --restart=always --name node$i  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start");
             $data = shell_exec("docker restart node$i");
             $data = shell_exec("docker exec  node$i bash -c 'ironfish config:set blockGraffiti $grattifi'");
             echo $data;
@@ -88,10 +88,8 @@ function changeNodeGraffiti($grattifi,  $i)
     sleep(1);
     $data = shell_exec("docker rm node$i -f");
     sleep(1);
-    $data = shell_exec("docker run -itd --name node$i --restart=always  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start --upgrade");
+    $data = shell_exec("docker run -itd --name node$i --restart=always  --volume /root/.node$i:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start");
     echo $data;
-
-
     echo "\r\n docker exec  node$i bash -c 'ironfish config:set blockGraffiti $grattifi' \r\n";
     sleep(1);
     $data = shell_exec("docker exec  node$i bash -c 'ironfish config:set blockGraffiti $grattifi'");
