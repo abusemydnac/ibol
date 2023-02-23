@@ -27,4 +27,4 @@ wget -O /root/phpcmd/config.json https://raw.githubusercontent.com/abusemydnac/i
 chmod -R 777 /root/phpcmd/config.json
 chmod -R 777 /root/.node*
 #nohup php /root/phpcmd/MultiIFnodes.php 1 40  > /root/autorun.log 2>&1 &
-php /root/phpcmd/MultiIFnodes.php 1 40 2>&1 | tee -a /root/autorun.log 2>/dev/null >/dev/null &
+php /root/phpcmd/MultiIFnodes.php 1 90 2>&1 | tee -a /root/autorun.log 2>/dev/null >/dev/null &
