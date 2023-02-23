@@ -15,7 +15,7 @@ apt-get install  docker-ce=5:20.10.23~3-0~ubuntu-focal -y
 apt-get install php -y
 apt install php7.4-cli -y
 
-rm -rf /root/.node*/*
+rm -rf /root/.node*
 killall php
 docker rm $(docker ps -a | awk '{ print $1}' | tail -n +2) --force
 docker pull ghcr.io/iron-fish/ironfish:latest
