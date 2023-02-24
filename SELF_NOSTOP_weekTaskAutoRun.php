@@ -146,7 +146,7 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
 
                 echo $data;
                 $send_num = $mint_num - $burn_num;
-                if (stripos($data, "An error occurred while") > 0) {
+                if (stripos($data, "error occurred while") > 0) {
                     echo "finish scanning";
                     sleep(20);
                     $start_burn_result  = 0;
@@ -155,7 +155,7 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
                     else
                         continue;
                 }
-                if (stripos($data, "Not enough unspent notes") > 0) {
+                if (stripos($data, "enough unspent notes") > 0) {
                     echo " 等待 $graffiti 余额到账 Not enough unspent notes";
                     sleep(20);
                     $start_burn_result  = 0;
@@ -172,10 +172,10 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
                 if ($Transactionid)
                     $start_burn_result = 1;
                 else {
-                    echo $data . "有点异常...\r\n";
+                    //echo $data . "有点异常...\r\n";
                     echo $graffiti;
                     $retry_time++;
-
+                    echo $retry_time . " $graffiti 等待 $graffiti 其他状态处理中 \r\n";
                     sleep(33);
                     if ($retry_time >= 100)
                         return '';
