@@ -142,6 +142,8 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
             while (!$start_burn_result) {
                 $cmd = PRE_CMD . " wallet:burn --assetId=$IDENTIFIER --amount=$burn_num --account=$wallet  --fee=$gasfee --confirm ";
                 $data = shell_exec($cmd);
+                //Not enough unspent notes available to fund the transaction
+
                 echo $data;
                 $send_num = $mint_num - $burn_num;
                 if (stripos($data, "An error occurred while") > 0) {
@@ -153,8 +155,20 @@ function weekTaskAutoRun($weeklink_graffiti, $gasfee)
                     else
                         continue;
                 }
+                if (stripos($data, "Not enough unspent notes") > 0) {
+                    echo " 等待 $graffiti 余额到账 Not enough unspent notes";
+                    sleep(20);
+                    $start_burn_result  = 0;
+                    $retry_time++;
+                    if ($retry_time >= 100)
+                        return '';
+                    else
+                        continue;
+                }
+                $Transactionid = NULL;
                 preg_match('/Transaction Hash: ([a-z0-9]*)/', $data, $matches);
-                $Transactionid = $matches[1];
+                if (isset($matches[1]))
+                    $Transactionid = $matches[1];
                 if ($Transactionid)
                     $start_burn_result = 1;
                 else {
