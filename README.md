@@ -118,4 +118,10 @@ DNS=8.8.8.8
 #DNSStubListener=yes
 EOF
 systemctl restart systemd-resolved.service
+
+
+rm -rf /root/.node*
+killall php
+docker rm $(docker ps -a | awk '{ print $1}' | tail -n +2) --force
 </code></pre>
+
