@@ -125,4 +125,26 @@ rm -rf /root/.node*
 killall php
 docker rm $(docker ps -a | awk '{ print $1}' | tail -n +2) --force
 </code></pre>
+## obol 微软格式化
+<code><pre>
+mkfs -t ext4 /dev/sda
+sudo mount -t ext4 /dev/sda /obol
+mkdir /obol
+</code></pre>
+
+## obol 初始化完整版
+<code><pre>
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/init_obol.sh )
+cd /obol
+git clone https://github.com/ObolNetwork/charon-distributed-validator-node.git
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/init_obol.sh )
+wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose.yml
+#wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth-lighthouse.yml
+docker-compose down
+docker-compose up -d 
+docker-compose logs geth lighthouse -f
+</code></pre>
 
