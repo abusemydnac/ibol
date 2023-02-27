@@ -30,6 +30,7 @@ docker-compose logs teku charon -f
 
 # 节点部署 geth&lighthouse
 <pre><code>
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/init_obol.sh )
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth-lighthouse.yml
 docker-compose down
 docker-compose up -d 
