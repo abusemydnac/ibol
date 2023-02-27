@@ -145,10 +145,12 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v2.16.0/docker
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/init_obol.sh )
+mkdir /obol
 cd /obol
 git clone https://github.com/ObolNetwork/charon-distributed-validator-node.git
+cd /obol/charon-distributed-validator-node
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/init_obol.sh )
-wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose.yml
+#wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose.yml
 #wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth-lighthouse.yml
 docker-compose down
 docker-compose up -d 
