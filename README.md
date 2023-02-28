@@ -141,9 +141,7 @@ mkdir /obol
 
 ## obol 初始化完整版
 <code><pre>
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
+
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/init_obol.sh )
 mkdir /obol
 cd /obol
