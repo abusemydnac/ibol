@@ -7,16 +7,16 @@ sudo systemctl restart ssh
 
 
 
-
+sudo mkdir /obol
 sudo  mkfs -t ext4 /dev/sda
 sudo mount -t ext4 /dev/sda /obol
+
+
+
+
+
+
 sudo mkdir /obol
-
-
-
-
-
-
 sudo  mkfs -t ext4 /dev/sdc
 sudo mount -t ext4 /dev/sdc /obol
-sudo mkdir /obol
+
