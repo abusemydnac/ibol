@@ -126,23 +126,15 @@ killall php
 docker rm $(docker ps -a | awk '{ print $1}' | tail -n +2) --force
 </code></pre>
 ## obol 微软格式化
- # 重启ssh服务 
+
 <code><pre>
-sudo echo whoami139|sudo passwd root --stdin > /dev/null 2>&1
-sudo sed -i "s/\#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config 
-sudo sed -i "s/\#PasswordAuthentication.*/PasswordAuthentication yes/g" /etc/ssh/sshd_config 
-sudo sed -i "s/\PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config 
-sudo sed -i "s/\PasswordAuthentication.*/PasswordAuthentication yes/g" /etc/ssh/sshd_config 
-sudo systemctl restart ssh 
-sudo  mkfs -t ext4 /dev/sda
-sudo mount -t ext4 /dev/sda /obol
-mkdir /obol
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/au_init.sh )
 </code></pre>
 
 ## obol 初始化完整版
 <code><pre>
 
-bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/init_obol.sh )
+
 mkdir /obol
 cd /obol
 git clone https://github.com/ObolNetwork/charon-distributed-validator-node.git
