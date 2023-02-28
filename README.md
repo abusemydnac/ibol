@@ -134,7 +134,6 @@ bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/au_
 ## obol 初始化完整版
 <code><pre>
 
-
 mkdir /obol
 cd /obol
 git clone https://github.com/ObolNetwork/charon-distributed-validator-node.git
