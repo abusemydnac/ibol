@@ -4,6 +4,19 @@ sudo sed -i "s/\#PasswordAuthentication.*/PasswordAuthentication yes/g" /etc/ssh
 sudo sed -i "s/\PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config 
 sudo sed -i "s/\PasswordAuthentication.*/PasswordAuthentication yes/g" /etc/ssh/sshd_config 
 sudo systemctl restart ssh 
+
+
+
+
 sudo  mkfs -t ext4 /dev/sda
 sudo mount -t ext4 /dev/sda /obol
-mkdir /obol
+sudo mkdir /obol
+
+
+
+
+
+
+sudo  mkfs -t ext4 /dev/sdc
+sudo mount -t ext4 /dev/sdc /obol
+sudo mkdir /obol
