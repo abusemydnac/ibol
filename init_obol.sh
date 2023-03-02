@@ -17,3 +17,9 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v2.16.0/docker
 
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+
+#wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose.yml
+#wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth-lighthouse.yml
+docker-compose down
+docker-compose up -d
+docker-compose logs geth lighthouse -f
