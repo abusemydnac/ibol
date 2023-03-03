@@ -144,5 +144,10 @@ bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/ini
 docker-compose down
 docker-compose up -d 
 docker-compose logs geth lighthouse -f
+
+
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/obol_cn.sh )
+
+
 </code></pre>
 
