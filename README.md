@@ -150,6 +150,20 @@ docker-compose logs geth lighthouse -f
 
 echo -e "{\n\t\"registry-mirrors\": [\"https://registry.docker-cn.com\"]\n}" > /etc/docker/daemon.json
 
+{
+  "registry-mirrors": [
+    "https://hub-mirror.c.163.com",
+    "https://mirror.baidubce.com",
+    "https://registry.docker-cn.com",
+    "https://reg-mirror.qiniu.com",
+    "https://dockerhub.azk8s.cn",
+    "https://docker.mirrors.ustc.edu.cn"
+  ]
+}
+
+systemctl daemon-reload
+systemctl restart docker
+docker info
 systemctl daemon-reload
 systemctl restart docker
 docker info
