@@ -18,6 +18,11 @@ sudo curl -L "https://get.daocloud.io/docker/compose/releases/download/v2.16.0/d
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
+mkdir /etc/docker
+echo -e "{\n   \"registry-mirrors\": [\"http://hub-mirror.c.163.com\",\"https://docker.mirrors.ustc.edu.cn\"]\n}" > /etc/docker/daemon.json
+systemctl daemon-reload
+systemctl restart docker
+docker info
 
 mkdir /obol
 cd /obol
