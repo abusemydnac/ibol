@@ -154,6 +154,9 @@ systemctl daemon-reload
 systemctl restart docker
 docker info
 
+sudo mkdir /obol
+sudo mkfs -t ext4 /dev/vdb
+sudo mount -t ext4 /dev/vdb /obol
 
 sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo touch /etc/systemd/system/docker.service.d/proxy.conf
