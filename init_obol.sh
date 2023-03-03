@@ -24,7 +24,7 @@ cd /obol
 git clone https://github.com/ObolNetwork/charon-distributed-validator-node.git
 cd /obol/charon-distributed-validator-node
 
-#wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose.yml
+wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose.yml
 #wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth-lighthouse.yml
 docker-compose down
 docker-compose up -d
