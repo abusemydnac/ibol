@@ -146,8 +146,26 @@ docker-compose up -d
 docker-compose logs geth lighthouse -f
 
 
-bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/obol_cn.sh )
 
+
+echo -e "{\n\t\"registry-mirrors\": [\"https://registry.docker-cn.com\"]\n}" > /etc/docker/daemon.json
+
+systemctl daemon-reload
+systemctl restart docker
+docker info
+
+
+sudo mkdir -p /etc/systemd/system/docker.service.d
+sudo touch /etc/systemd/system/docker.service.d/proxy.conf
+[Service]
+Environment="HTTP_PROXY=http://20.68.173.22:8888/"
+Environment="HTTPS_PROXY=http://20.68.173.22:8888/"
+Environment="NO_PROXY=localhost,127.0.0.1,.example.com"
+systemctl daemon-reload
+systemctl restart docker
+docker info
+
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/obol_cn.sh )
 
 </code></pre>
 
