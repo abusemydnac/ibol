@@ -141,7 +141,9 @@ docker-compose up -d
 docker-compose logs geth lighthouse -f
 
 
-
+curl --connect-timeout 2 -x 20.68.173.22:8888 http://google.com
+export http_proxy=http://20.68.173.22:8888
+export https_proxy=http://20.68.173.22:8888
 
 echo -e "{\n\t\"registry-mirrors\": [\"https://registry.docker-cn.com\"]\n}" > /etc/docker/daemon.json
 
@@ -164,15 +166,18 @@ systemctl restart docker
 docker info
 
 sudo mkdir /obol
-sudo mkfs -t ext4 /dev/vdb
-sudo mount -t ext4 /dev/vdb /obol
+sudo mkfs -t ext4 /dev/sdb
+sudo mount -t ext4 /dev/sdb /obol
 
 sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo touch /etc/systemd/system/docker.service.d/proxy.conf
+sudo tee /etc/systemd/system/docker.service.d/proxy.conf <<-'EOF'
 [Service]
 Environment="HTTP_PROXY=http://20.68.173.22:8888/"
 Environment="HTTPS_PROXY=http://20.68.173.22:8888/"
 Environment="NO_PROXY=localhost,127.0.0.1,.example.com"
+EOF
+
 systemctl daemon-reload
 systemctl restart docker
 docker info
