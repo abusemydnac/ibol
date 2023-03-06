@@ -145,7 +145,7 @@ curl --connect-timeout 2 -x 20.68.173.22:8888 http://google.com
 export http_proxy=http://20.68.173.22:8888
 export https_proxy=http://20.68.173.22:8888
 
-echo -e "{\n\t\"registry-mirrors\": [\"https://registry.docker-cn.com\"]\n}" > /etc/docker/daemon.json
+/etc/docker/daemon.json
 
 {
   "registry-mirrors": [
@@ -161,9 +161,7 @@ echo -e "{\n\t\"registry-mirrors\": [\"https://registry.docker-cn.com\"]\n}" > /
 systemctl daemon-reload
 systemctl restart docker
 docker info
-systemctl daemon-reload
-systemctl restart docker
-docker info
+
 
 sudo mkdir /obol
 sudo mkfs -t ext4 /dev/sdb
