@@ -191,8 +191,26 @@ docker ps
 
 # docker-compose-lighthouse.yml
 cd /obol/charon-distributed-validator-node
+docker rm -f root-geth-1
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-lighthouse.yml
 docker-compose down
 docker-compose up -d
 docker ps
+
+# docker-compose-charon.yml
+cd /obol/charon-distributed-validator-node
+docker rm -f root-geth-1
+wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-charon.yml
+docker-compose down
+docker-compose up -d
+docker ps
+
+# docker-compose.yml
+cd /obol/charon-distributed-validator-node
+docker rm -f root-geth-1
+wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose.yml
+docker-compose down
+docker-compose up -d
+docker ps
+
 </code></pre>
