@@ -183,7 +183,15 @@ bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/obo
 #geth先运行
 <code><pre>
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/spug_init_obol.sh )
+cd /obol/charon-distributed-validator-node
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth.yml
+docker-compose down
+docker-compose up -d
+docker ps
+
+# docker-compose-lighthouse.yml
+cd /obol/charon-distributed-validator-node
+wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-lighthouse.yml
 docker-compose down
 docker-compose up -d
 docker ps
