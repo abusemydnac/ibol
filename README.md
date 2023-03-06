@@ -190,6 +190,7 @@ docker-compose up -d
 docker ps
 
 # docker-compose-lighthouse.yml
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/spug_init_obol.sh )
 cd /obol/charon-distributed-validator-node
 docker rm -f root-geth-1
 wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-lighthouse.yml
