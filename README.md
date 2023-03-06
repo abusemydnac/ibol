@@ -52,25 +52,20 @@ tail -f  create.log
 </code></pre>
 
 
-# AUTOHOSTINGIF2
+# 运行脚本 查看系统
 
 <pre><code>
-mkdir /root/phpcmd/
-wget -O /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php https://raw.githubusercontent.com/abusemydnac/ibol/main/SELF_NOSTOP_weekTaskAutoRun.php
 
-wget -O /root/phpcmd/createWalletAndFaucet.php https://raw.githubusercontent.com/abusemydnac/ibol/main/createWalletAndFaucet.php
+apt install dos2unix -y
+wget -O test.sh 43.154.249.28:8000/auto_obol.php
+dos2unix test.sh 
+bash test.sh
 
-npm config set registry https://registry.npm.taobao.org
 
-apt install npm -y
 
-npm install pm2 -g
-
-php /root/phpcmd/createWalletAndFaucet.php 1 100
-
-pm2 start /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php -i 10
-
-pm2 scale /root/phpcmd/SELF_NOSTOP_weekTaskAutoRun.php  10
+apt install sysstat -y
+sar -u 1 2
+sar -r 1 2
 
 </code></pre>
 
