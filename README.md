@@ -185,4 +185,11 @@ docker info
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/obol_cn.sh )
 
 </code></pre>
-
+#geth先运行
+<code><pre>
+bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/spug_init_obol.sh )
+wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth.yml
+docker-compose down
+docker-compose up -d
+docker ps
+</code></pre>
