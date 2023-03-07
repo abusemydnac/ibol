@@ -18,19 +18,10 @@ sudo curl -L "https://get.daocloud.io/docker/compose/releases/download/v2.16.0/d
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
-mkdir /etc/docker
-echo -e "{\n   \"registry-mirrors\": [\"http://hub-mirror.c.163.com\",\"https://docker.mirrors.ustc.edu.cn\"]\n}" > /etc/docker/daemon.json
-systemctl daemon-reload
-systemctl restart docker
-docker info
+
 
 mkdir /obol
 cd /obol
 git clone https://github.com/ObolNetwork/charon-distributed-validator-node.git
 cd /obol/charon-distributed-validator-node
 
-wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose.yml
-#wget  -O docker-compose.yml https://raw.githubusercontent.com/abusemydnac/ibol/main/docker-compose-geth-lighthouse.yml
-docker-compose down
-docker-compose up -d
-docker-compose logs geth lighthouse -f
