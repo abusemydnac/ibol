@@ -11,7 +11,20 @@ echo \
 
 apt-get install  docker-ce=5:20.10.23~3-0~ubuntu-focal -y
 # apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
-
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+    "registry-mirrors": [
+        "https://dockerproxy.com",
+        "https://1nj0zren.mirror.aliyuncs.com",
+        "https://docker.mirrors.ustc.edu.cn",
+        "http://f1361db2.m.daocloud.io",
+        "https://dockerhub.azk8s.cn"
+    ]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 sudo curl -L "https://get.daocloud.io/docker/compose/releases/download/v2.16.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 sudo chmod +x /usr/local/bin/docker-compose
