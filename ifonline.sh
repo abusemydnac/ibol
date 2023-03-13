@@ -18,5 +18,5 @@ docker pull ghcr.io/iron-fish/ironfish:latest
 cd /root/
 mkdir /root/phpcmd
 cd /root/phpcmd
-wget -O MultiIFnodes.php https://raw.githubusercontent.com/abusemydnac/ibol/main/MultiIFnodes.php
+wget -O createWalletAndFaucet.php https://raw.githubusercontent.com/abusemydnac/ibol/main/createWalletAndFaucet.php
 wget -O config.json https://raw.githubusercontent.com/abusemydnac/ibol/main/config.json
