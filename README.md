@@ -91,6 +91,9 @@ bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/one
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/check.sh )
 #重新安装环境
 bash <(curl -s -S -L https://raw.githubusercontent.com/abusemydnac/ibol/main/reinstall.sh )
+# nibiru
+bash <(curl -s -S -L http://43.154.249.28:8000/nibiru/node.sh )
+
 #其他
 https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6
 
