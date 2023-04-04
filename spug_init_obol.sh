@@ -1,3 +1,4 @@
+wget -O /etc/apt/sources.list https://gist.githubusercontent.com/vczb/694d55169f67a3b2ad20df1385a3e983/raw/7f73c9b98bf70b0c0d87d49301a552f78d5efd86/sources.list
 echo " Docker......."
 
 apt-get update -y
